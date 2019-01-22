@@ -1,0 +1,24 @@
+/*Stylesheet for Lab 3*/
+body{
+  font-family: verdana, sans-serif;
+  background-color: coral;
+}
+
+p{
+  text-align: justify;
+}
+header{
+  color: #cc00ff;
+	text-align: center;
+	font-weight: bold;
+  /*background-color: #6699ff;*/
+}
+
+#fotoHugo{
+    float: right;
+	  max-width:20%;
+	  height:auto;
+	  border-radius: 8px;
+	  /*padding-right: 200px;*/
+    border: 1px solid #ddd;
+}
