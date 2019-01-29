@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Lab 4. JavaScript</title>
+    <script src='scripts.js'></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <br/>
+      <h2>Laboratorio 4. Fundamentos de JavaScript</h2>
+      <br/>
+    </header>
+
+    <div class="scripts">
+    <br/>
+      <ol id="sc">
+
+        <li>
+          <button onclick="func1()">Correr</button>
+        </li>
+
+        <li>
+          <button onclick="func2()">Correr</button>
+        </li>
+
+        <li>
+          <button onclick="func3()">Correr</button>
+        </li>
+
+        <li>
+          <button onclick="func4()">Correr</button>
+        </li>
+
+        <li>
+          <button onclick="func5()">Correr</button>
+        </li>
+
+        <li>
+          El problema se encuentra planteado en la
+          siguiente liga <a href="http://codeforces.com/contest/313/problem/A" target=_blank id="code">http://codeforces.com/contest/313/problem/A</a><br/>
+          <button onclick="func6()">Correr</button>
+        </li>
+
+      </ol>
+      <br/>
+    </div>
+    <div class="preg">
+      <br/>
+      <h2>Preguntas Lab. 4</h2>
+      <ol>
+          <li>
+            ¿Qué diferencias y semejanzas hay entre Java y JavaScript?<br/>
+            <table>
+              <tr>
+                <th>Semejanzas</th>
+                <th>Diferencias</th>
+              </tr>
+              <tr>
+                <td>Son lenguajes Orientados a Objetos <a href="#ref">[1]</a></td>
+                <td>Java es un lenguaje de programacion y JavaScript es un lenguaje de scripting <a href="#ref">[1]</a></td>
+              </tr>
+              <tr>
+                <td>Pueden ser utilizados para la web</td>
+                <td>Las aplicaciones de Java corren en una maquina virtual las de JavaScript en un navegador</td>
+              </tr>
+              <tr>
+                <td>Las sentencias se terminan con ; (punto y coma)</td>
+                <td>El codigo de Java debe ser compilado y el de JavaScript es un archivo de texto<a href="#ref">[2]</a></td>
+              </tr>
+              <tr>
+                <td>Son multiplataforma</td>
+                <td>La sintaxis de JavaScript es menos estricta que la de Java</td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) <a href="#ref">[3]</a>
+            <ul>
+              <li>getTime(): Milisegundos desde el 1 de enero de 1970</li>
+              <li>getDay(): Dia de la semana con un numero del 0 al 6</li>
+              <li>getFullYear(): Año actual en formato YYYY (2019, por ejemplo)</li>
+              <li>getHours(): Hora actual del 0 al 23</li>
+              <li>getSeconds(): Segundo actual del 0 al 59</li>
+            </ul>
+
+          </li>
+          <li>
+            ¿Qué métodos tienen los arreglos? (Menciona al menos 5*) <a href="#ref">[4]</a>
+            <ul>
+              <li>concat(): Concatenar dos arreglos</li>
+              <li>includes(): Checa si el arreglo tiene cierto elemento</li>
+              <li>indexOf(): Busca un elemento y regresa su indice</li>
+              <li>push(): Agrega un elemento al final del arreglo</li>
+              <li>pop(): Elimina el ultimo elemento del arreglo</li>
+            </ul>
+
+          </li>
+          <li>
+            ¿Cómo se declara una variable con alcance local dentro de una función?<br/>
+            Se escribe "var nombreVariable" dentro de las llaves de la funcion, por ejemplo "var num",
+            y se le puede asignar cualquier valor, y este solo sera visible dentro de
+            la funcion. <a href="#ref">[5]</a>
+
+
+          </li>
+          <li>
+            ¿Qué implicaciones tiene utilizar variables globales dentro de funciones?<br/>
+            Se puede sobreescribir, perdiendose el valor que tenia previamente contenido. <a href="#ref">[5]</a>
+          </li>
+          <li>
+            ¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?<br/>
+            El metodo <strong>match()</strong>. Como parametro se escribe la expresion a
+            buscar y regresa todas las ocurrencias dentro de un array. <a href="#ref">[6]</a> Se puede usar por ejemplo
+            para encontrar reseñas negativas de un producto, usando la expresion "mal".
+          </li>
+      </ol>
+      <br/>
+    </div>
+    <div class="referencias" id="ref">
+      <br/>
+      <h3>Referencias</h3>
+      [1] Oracle Corporation. "How is JavaScript different from Java?". Internet: <a href="https://www.java.com/en/download/faq/java_javascript.xml" target=_blank>https://www.java.com/en/download/faq/java_javascript.xml</a>. [Ene. 28, 2019].<br/>
+      [2] J. Burns. "Java vs. JavaScript: Similarities and Differences". Internet: <a href="https://www.htmlgoodies.com/beyond/javascript/article.php/3470971/Java-vs-JavaScript.htm" target=_blank>https://www.htmlgoodies.com/beyond/javascript/article.php/3470971/Java-vs-JavaScript.htm</a>. Jun 3, 2015. [Ene. 28, 2019].<br/>
+      [3] W3 Schools. "JavaScript Get Date Methods". Internet: <a href="https://www.w3schools.com/js/js_date_methods.asp" target=_blank>https://www.w3schools.com/js/js_date_methods.asp</a>. [Ene. 28, 2019].<br/>
+      [4] W3 Schools. "JavaScript Array Reference". Internet: <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp" target=_blank>https://www.w3schools.com/jsref/jsref_obj_array.asp</a>. [Ene. 28, 2019].<br/>
+      [5] I. Gerchev. "Demystifying JavaScript Variable Scope and Hoisting". Internet: <a href="https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/" target=_blank>https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/</a>. Dec. 2, 2014. [Ene. 28, 2019].<br/>
+      [6] W3 Schools. "JavaScript String match() Method". Internet: <a href="https://www.w3schools.com/jsref/jsref_match.asp" target=_blank>https://www.w3schools.com/jsref/jsref_match.asp</a>. [Ene. 28, 2019].<br/>
+      <br/>
+    </div>
+    <footer>
+      <br/>
+      <h2>Informacion de contacto</h2>
+      <ul>
+        <li>Nombre: Hugo David Franco Avila</li>
+        <li>Matricula: A01654856</li>
+        <li>Correo electronico: hfranco21@hotmail.com</li>
+      </ul>
+      <br/><br/>
+    </footer>
+  </body>
+</html>
