@@ -33,6 +33,7 @@ header{
 
 div.scripts{
   background-color: #6666ff;
+  color: #000;
 }
 
 div.preg{
@@ -71,7 +72,7 @@ td{
   /*margin:0;*/
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #f2f2f2;color: #000}
 /*tr:nth-child(odd) {background-color: #cecedf;}*/
 
 table{
@@ -87,4 +88,13 @@ div.referencias{
   padding-right: 25px;
   background-color: #66ff99;
   color: #000;
+}
+
+div.fun1{
+  color: #000;
+}
+
+button{
+  margin-left: 138px;
+  margin-right: 50px;
 }
