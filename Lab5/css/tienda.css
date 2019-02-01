@@ -1,7 +1,7 @@
 /*Stylesheet for tienda*/
 img{
-  width: 235px;
-  height: auto;
+  width: auto;
+  height: 170px;
   float: top;
   border-radius: 8px;
   border-width: thin;
@@ -29,5 +29,43 @@ input[type="number"] {
 }
 
 #but1, #but2, #but3{
-  float: right;
+  float: center;
+}
+
+#titl{
+  text-align: center;
+  font-family: sans-serif;
+}
+
+hr{
+  border: 2px solid black;
+}
+
+.productos td, th {
+  border-left: solid 2px black;
+  font-family: courier;
+  padding: 9px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.no-border{
+  border-left: none;
+}
+
+table{
+  background-color: #f2f2f2;
+}
+
+div.total{
+  background-color: coral;
+}
+
+.total table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#long{
+  text-align: right;
 }

@@ -20,9 +20,11 @@
     </div>
     <div class="productos">
       <br/>
+      <hr/>
+      <h2 id="titl">Productos</h2><hr/>
       <table>
         <tr>
-          <td>
+          <td class="no-border">
             <img src="images/jordan1.jpg" alt="Air Jordan 1 Origin Story" /><br/>
             Air Jordan 1<br/>
             Precio: $3200.00<br/>
@@ -40,14 +42,33 @@
             <img src="images/jordan4.jpg" alt="Air Jordan 4 Cactus Jack" /><br/>
             Air Jordan 4<br/>
             Precio: $4000.00<br/>
-            Unidades <input type="number" class="valor" id="p3" required /><br/>
+            Unidades: <input type="number" class="valor" id="p3" required /><br/>
             <input type="button" value='Agregar al carrito' id="but3"><br/>
           </td>
         </tr>
       </table>
+      <br/>
     </div>
     <div class="total">
+      <br/>
+      <table>
+        <thead>
+          <td>Articulo</td>
+          <td>Cantidad</td>
+          <td>Precio sin IVA</td>
+          <td>% de IVA</td>
+          <td>Precio con IVA</td>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+          <td colspan="4" id="long">Total:</td>
+          <td id="costo"></td>
+        </tfoot>
 
+      </table>
+      <button>Checkout</button>
+      <br/>
     </div>
 
     <footer>
@@ -60,5 +81,6 @@
       </ul>
       <br/><br/>
     </footer>
+    <script src="js/tienda.js"></script>
   </body>
 </html>

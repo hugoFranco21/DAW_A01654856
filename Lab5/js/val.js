@@ -60,7 +60,9 @@ myInput.onkeyup = function() {
 }
 
 myBut.onclick = function(){
-  if(myInput.value === document.getElementById("pass").value){
+  if(myInput.value == ''){
+    alert('No has ingresado tu contraseña');
+  } else if(myInput.value === document.getElementById("pass").value){
     alert('Las contraseñas coinciden!');
   } else{
     alert('Las contraseñas no coinciden');
