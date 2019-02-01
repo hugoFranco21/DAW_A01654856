@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Lab 5. Home</title>
+    <title>Lab 5. Tienda</title>
     <script src></script>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/tienda.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <header>
@@ -17,8 +18,38 @@
       <a class="active" href="tienda.html">Tienda</a>
       <a href="forma.html">Forma</a>
     </div>
+    <div class="productos">
+      <br/>
+      <table>
+        <tr>
+          <td>
+            <img src="images/jordan1.jpg" alt="Air Jordan 1 Origin Story" /><br/>
+            Air Jordan 1<br/>
+            Precio: $3200.00<br/>
+            Unidades: <input type="number" class="valor" id="p1" required /><br/>
+            <input type="button" value='Agregar al carrito' id="but1"><br/>
+          </td>
+          <td>
+            <img src ="images/ultrab.jpg" alt="Adidas Ultraboosts"/><br/>
+            Adidas Ultraboost<br/>
+            Precio: $3600.00<br/>
+            Unidades: <input type="number" class="valor" id="p2" required /><br/>
+            <input type="button" value='Agregar al carrito' id="but2"><br/>
+          </td>
+          <td>
+            <img src="images/jordan4.jpg" alt="Air Jordan 4 Cactus Jack" /><br/>
+            Air Jordan 4<br/>
+            Precio: $4000.00<br/>
+            Unidades <input type="number" class="valor" id="p3" required /><br/>
+            <input type="button" value='Agregar al carrito' id="but3"><br/>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="total">
 
-    
+    </div>
+
     <footer>
       <br/>
       <h2>Informacion de contacto</h2>

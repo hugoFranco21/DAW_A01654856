@@ -1,0 +1,33 @@
+/*Stylesheet for tienda*/
+img{
+  width: 235px;
+  height: auto;
+  float: top;
+  border-radius: 8px;
+  border-width: thin;
+}
+
+div.prod1{
+  float: left;
+}
+
+div.prod2{
+
+}
+
+div.prod3{
+  float: right;
+}
+
+div.productos{
+  background-color: #adebad;
+}
+
+input[type="number"] {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#but1, #but2, #but3{
+  float: right;
+}
