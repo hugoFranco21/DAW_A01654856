@@ -2,7 +2,6 @@
 <html lang="es">
   <head>
     <title>Lab 5. Tienda</title>
-    <script src></script>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/tienda.css" rel="stylesheet" type="text/css"/>
   </head>
@@ -28,21 +27,21 @@
             <img src="images/jordan1.jpg" alt="Air Jordan 1 Origin Story" /><br/>
             Air Jordan 1<br/>
             Precio: $3200.00<br/>
-            Unidades: <input type="number" class="valor" id="p1" required /><br/>
+            Unidades: <input type="number" class="valor" id="p1" /><br/>
             <input type="button" value='Agregar al carrito' id="but1"><br/>
           </td>
           <td>
             <img src ="images/ultrab.jpg" alt="Adidas Ultraboosts"/><br/>
             Adidas Ultraboost<br/>
             Precio: $3600.00<br/>
-            Unidades: <input type="number" class="valor" id="p2" required /><br/>
+            Unidades: <input type="number" class="valor" id="p2" /><br/>
             <input type="button" value='Agregar al carrito' id="but2"><br/>
           </td>
           <td>
             <img src="images/jordan4.jpg" alt="Air Jordan 4 Cactus Jack" /><br/>
             Air Jordan 4<br/>
             Precio: $4000.00<br/>
-            Unidades: <input type="number" class="valor" id="p3" required /><br/>
+            Unidades: <input type="number" class="valor" id="p3" /><br/>
             <input type="button" value='Agregar al carrito' id="but3"><br/>
           </td>
         </tr>
@@ -53,22 +52,27 @@
       <br/>
       <table>
         <thead>
-          <td>Articulo</td>
-          <td>Cantidad</td>
-          <td>Precio sin IVA</td>
-          <td>% de IVA</td>
-          <td>Precio con IVA</td>
+          <tr>
+            <td>Articulo</td>
+            <td>Cantidad</td>
+            <td>Precio sin IVA</td>
+            <td>% de IVA</td>
+            <td>Precio con IVA</td>
+          </tr>
         </thead>
-        <tbody>
+        <tbody id='bo'>
         </tbody>
         <tfoot>
-          <td colspan="4" id="long">Total:</td>
-          <td id="costo"></td>
+          <tr>
+            <td colspan="4" id="long">Total:</td>
+            <td id="costo">$ 0.00</td>
+          </tr>
         </tfoot>
 
       </table>
-      <button>Checkout</button>
       <br/>
+      <input type='button' id='checkout' value='Checkout' />
+      <br/><br/><br/>
     </div>
 
     <footer>
