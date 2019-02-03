@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Lab 5. Validador</title>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/valid.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header>
+      <br/>
+      <h2>Laboratorio 5. Programacion Orientada a Eventos</h2>
+      <br/>
+    </header>
+    <div class="topnav">
+      <a href="index.html">Pagina Principal</a>
+      <a class="active" href="validador.html">Validador de Contraseñas</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="forma.html">Forma </a>
+    </div>
+
+    <div class ="validador">
+      <br/>
+      <article>
+        <h2>Validador de password</h2>
+        <p>Quieres saber si tu contraseña cumple con los requisitos
+          para ser considerada segura? Escribe cualquier expresion
+          (para los que no se sientan seguros escribiendo su contraseña),
+          y este validador te dirá si cumple con los requisitos.
+      </article>
+      <div class="container">
+        <form method="post"><!--action="/action_page.php" -->
+          <label for="pass">Contraseña</label>
+          <input type="text" id="pass" name="pass" placeholder="Escribe tu contraseña" required>
+
+          <label for="pass2">Re-ingresa tu contraseña</label>
+          <input type="password" id="pass2" name="pass2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe tener al menos una mayuscula, una minuscula, un numero y una minima extension de 8 caracteres" placeholder="Re-escribe tu contraseña" required>
+
+          <input type="submit" value="Validar" id="but">
+        </form>
+      </div>
+
+      <div id="message">
+        <h3>La contraseña debe contener lo siguiente:</h3>
+        <p id="letter" class="invalid">Al menos una letra <b>minuscula</b></p>
+        <p id="capital" class="invalid">Al menos una letra <b>mayuscula</b></p>
+        <p id="number" class="invalid">Al menos un <b>numero</b></p>
+        <p id="length" class="invalid">Minimo <b>8 caracteres</b></p>
+      </div>
+
+    </div>
+
+
+
+    <footer>
+      <br/>
+      <h2>Informacion de contacto</h2>
+      <ul>
+        <li>Nombre: Hugo David Franco Avila</li>
+        <li>Matricula: A01654856</li>
+        <li>Correo electronico: hfranco21@hotmail.com</li>
+      </ul>
+      <br/><br/>
+    </footer>
+    <script src='js/val.js'></script>
+  </body>
+</html>

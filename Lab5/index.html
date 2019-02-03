@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Lab 5. Home</title>
+    <script src></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header>
+      <br/>
+      <h2>Laboratorio 5. Programacion Orientada a Eventos</h2>
+      <br/>
+    </header>
+    <div class="topnav">
+      <a class="active" href="#home">Pagina Principal</a>
+      <a href="validador.html">Validador de Contraseñas</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="forma.html">Forma</a>
+    </div>
+
+    <div class="preg">
+      <br/>
+      <h2>Preguntas Lab. 5</h2>
+      <ol>
+          <li>
+            ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?<br/>
+            Para que no se tengan que hacer llamadas al servidor sabiendo que va a regresar un error, mejor se checa del lado
+            del cliente, y si cumple, ya se manda al servidor para validarse, evitando asi estres innecesario en el servidor. <a href="#ref" id="code">[1]</a>
+          </li>
+          <li>
+            ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?<br/>
+            Una forma es desactivando JavaScript dentro del navegador, otra es usando una proxy para
+            capturar la forma y mandar una con los valores que quieras. <a href="#ref" id="code">[2]</a>
+          </li>
+          <li>
+            Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?<br/>
+            Porque es suficientemente bueno para los usuarios que no realizan
+            modificaciones a su navegador, que es la gran mayoria, con lo que acelera bastante el proceso. Y para los usuarios avanzados
+            que saben como saltarse la validacion, esta la validacion del lado del servidor.
+
+          </li>
+        </ol>
+      <br/>
+    </div>
+    <div class="referencias" id="ref">
+      <br/>
+      <h3>Referencias</h3>
+      [1] Anonimo. "JavaScript: Form Validation". Internet: <a href="https://www.the-art-of-web.com/javascript/validate/" target=_blank id="code">https://www.the-art-of-web.com/javascript/validate/</a>. Jun. 15, 2016. [Ene. 30, 2019].<br/>
+      [2] Portswigger. "Using Burp to Bypass Client Side JavaScript Validation". Internet: <a href="https://support.portswigger.net/customer/portal/articles/1964212-using-burp-to-bypass-client-side-javascript-validation" target=_blank id="code">https://support.portswigger.net/customer/portal/articles/1964212-using-burp-to-bypass-client-side-javascript-validation</a>. [Ene. 30, 2019].<br/>
+      <br/><br/>
+    </div>
+    <footer>
+      <br/>
+      <h2>Informacion de contacto</h2>
+      <ul>
+        <li>Nombre: Hugo David Franco Avila</li>
+        <li>Matricula: A01654856</li>
+        <li>Correo electronico: hfranco21@hotmail.com</li>
+      </ul>
+      <br/><br/>
+    </footer>
+  </body>
+</html>

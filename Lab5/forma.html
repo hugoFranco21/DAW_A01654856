@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Lab 5. Form</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/forma.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header>
+      <br/>
+      <h2>Laboratorio 5. Programacion Orientada a Eventos</h2>
+      <br/>
+    </header>
+    <div class="topnav">
+      <a href="index.html">Pagina Principal</a>
+      <a href="validador.html">Validador de Contraseñas</a>
+      <a href="tienda.html">Tienda</a>
+      <a class="active" href="forma.html">Forma</a>
+    </div>
+    <div class="Generador">
+
+      <br/>
+      <h2 id="titulo">Generador de citas IEEE</h2>
+      <br/>
+        <form id="IEEEgen" method="post" >
+          <label for="nomAutor">Nombre Autor: </label>
+          <input type="text" id="nomAutor" name="nomAutor" placeholder="Escribe el nombre del autor" >
+
+          <label for="apAutor">Apellido Autor: </label>
+          <input type="text" id="apAutor" name="apAutor" placeholder="Escribe el apellido del autor" required >
+
+          <label for="articulo">Nombre Articulo: </label>
+          <input type="text" id="articulo" name="articulo" placeholder="Escribe el nombre del articulo o publicacion" required>
+
+          <label for="URL">URL: </label>
+          <input type="text" id="URL" name="URL" placeholder="Escribe el hipervinculo de la publicacion" required >
+
+          <label for="fechaCr">Fecha de publicacion: </label>
+          <input type="date" id="fechaCr" name="fechaCr" placeholder="Escribe la fecha en la que fue publicado el articulo" >
+
+          <label for="fechaAc">Fecha de acceso: </label>
+          <input type="date" id="fechaAc" name="fechaAc" placeholder="Escribe la fecha en la que accesaste al articulo" required>
+
+          <input type="submit" value="Generar" id="but">
+          <input type="reset" value="Restablecer" id='res'>
+      <br/>
+    </div>
+    <div id="output">
+      <br/>
+      <h2>Salida</h2>
+      <p id="cita"></p>
+      <br/>
+    </div>
+
+    <footer>
+      <br/>
+      <h2>Informacion de contacto</h2>
+      <ul>
+        <li>Nombre: Hugo David Franco Avila</li>
+        <li>Matricula: A01654856</li>
+        <li>Correo electronico: hfranco21@hotmail.com</li>
+      </ul>
+      <br/><br/>
+    </footer>
+    <script src="js/forma.js"></script>
+  </body>
+</html>

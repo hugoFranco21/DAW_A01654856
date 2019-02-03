@@ -1,0 +1,113 @@
+/*Stylesheet for lab 5*/
+body{
+  font-family: verdana, sans-serif;
+  background-color: #cc99ff;
+  margin: 0 auto;
+  max-width: 50em;
+}
+
+li{
+  margin-bottom: 20px;
+}
+
+footer{
+  color: #000;
+	text-align: left;
+  padding-left: 25px;
+  background-color: #6699ff;
+  padding-bottom: 0px;
+  font-family: verdana, sans-serif;
+  margin-bottom: 0px;
+}
+
+header{
+  color: #000;
+	text-align: center;
+	font-weight: bold;
+  background-color: #6699ff;
+}
+
+div.preg{
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #669999;
+  font-family: arial, sans-serif;
+  text-align: justify;
+  color: #fff;
+}
+
+#code{
+  color: #fff;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+th, td {
+  padding: 15px;
+}
+
+th{
+  text-align: center;
+  background-color: #666699;
+  color: #fff;
+}
+
+td{
+  text-align: left;
+  /*margin:0;*/
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;color: #000}
+/*tr:nth-child(odd) {background-color: #cecedf;}*/
+
+table{
+  padding-left: 0px;
+  margin-left: 0px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+div.referencias{
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #990000;
+  color: #fff;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  padding-left: 42px;
+  padding-right: 42px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}

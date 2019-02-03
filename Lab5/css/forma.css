@@ -1,0 +1,40 @@
+/*Stylesheet for IEEE generator*/
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+input:hover{
+  cursor: pointer;
+}
+
+input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  color: white;
+  width: 30%;
+  margin-right: 50px;
+}
+
+div.Generador{
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #ff6699;
+}
+
+#cita {
+  color: #000;
+  position: relative;
+  padding: 20px;
+}
+
+#output{
+  display:none;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #ffcc99;
+}
