@@ -1,0 +1,28 @@
+/*Stylesheet for tutoriales.html*/
+.pos{
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #ff6699;
+}
+
+.container{
+  position: sticky;
+  top: 0;
+}
+
+.pos img{
+  border: 3px solid #73AD21;
+  height: auto;
+  cursor: pointer;
+  width: 60%;
+}
+
+.center {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: large;
+  color: #fff;
+}
