@@ -26,3 +26,15 @@
   font-size: large;
   color: #fff;
 }
+
+.texto{
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #ffccff;
+}
+
+.texto button{
+  margin-left: 3.5%;
+  border-radius: 8px;
+  text-align: center;
+}
