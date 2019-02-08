@@ -2,7 +2,7 @@
 .pos{
   padding-left: 5%;
   padding-right: 5%;
-  background-color: #ff6699;
+  background-color: #ccccff;
 }
 
 .container{
@@ -14,7 +14,7 @@
   border: 3px solid #73AD21;
   height: auto;
   cursor: pointer;
-  width: 60%;
+  width: 50%;
 }
 
 .center {
@@ -37,4 +37,15 @@
   margin-left: 3.5%;
   border-radius: 8px;
   text-align: center;
+}
+
+header{
+  position: sticky;
+}
+
+#git{
+  position: static;
+  width: 40%;
+  height: auto;
+  margin-left: 60%;
 }

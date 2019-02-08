@@ -55,3 +55,11 @@ document.getElementById('inv').onclick = function finv(){
   }
   //console.log(cam.style.fontSize);
 }
+
+document.getElementById('eventos').onmouseover = function ch(){
+  document.getElementById('eventos').style.fontFamily ='Monospace';
+}
+
+document.getElementById('eventos').onmouseout = function ch1(){
+  document.getElementById('eventos').style.fontFamily ='serif';
+}

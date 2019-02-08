@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Lab 6</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/juego.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <img src="images/watmar.png" alt="Marca de agua" id="watermark" />
+    <header>
+      <br/>
+      <h2>Laboratorio 6. Documentos dinamicos con JavaScript</h2>
+      <br/>
+    </header>
+    <div class="topnav">
+      <a href="index.html">Preguntas</a>
+      <a href="tutoriales.html">Tutoriales</a>
+      <a href="forma.html">Generador IEEE</a>
+      <a class="active" href="juego.html">Juego</a>
+    </div>
+    <div class="juego">
+      <br/>
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <img class="image" src="images/1.png" id="drag1" draggable="true" ondragstart="drag(event)" />
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <img class="image" src="images/2.png" id="drag2" draggable="true" ondragstart="drag(event)" />
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <img class="image" src="images/3.png" id="drag3" draggable="true" ondragstart="drag(event)" />
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <img class="image" src="images/4.png" id="drag4" draggable="true" ondragstart="drag(event)" />
+      <br/><br/>
+      <button type="button" id="emp">Empezar juego</button>
+      <br/><br/>
+    </div>
+    <footer>
+      <br/>
+      <h2>Informacion de contacto</h2>
+      <ul>
+        <li>Nombre: Hugo David Franco Avila</li>
+        <li>Matricula: A01654856</li>
+        <li>Correo electronico: hfranco21@hotmail.com</li>
+      </ul>
+      <br/><br/>
+    </footer>
+  <script src="js/juego.js"></script>
+  </body>
+</html>
