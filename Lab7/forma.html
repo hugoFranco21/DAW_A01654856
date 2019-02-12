@@ -9,10 +9,10 @@
     <title>Lab 7</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"  type="text/css"/>
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/forma.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <header>
@@ -37,33 +37,40 @@
       </nav>
     </header>
 
-    <div class="Generador">
 
+    <div class="Generador">
       <br/>
       <h2 id="titulo">Generador de citas IEEE</h2>
       <br/>
         <form id="IEEEgen" method="post" >
-          <label for="nomAutor">Nombre Autor: </label>
-          <input type="text" id="nomAutor" name="nomAutor" placeholder="Escribe el nombre del autor" >
-
-          <label for="apAutor">Apellido Autor: </label>
-          <input type="text" id="apAutor" name="apAutor" placeholder="Escribe el apellido del autor" required >
-
-          <label for="articulo">Nombre Articulo: </label>
-          <input type="text" id="articulo" name="articulo" placeholder="Escribe el nombre del articulo o publicacion" required>
-
-          <label for="URL">URL: </label>
-          <input type="text" id="URL" name="URL" placeholder="Escribe el hipervinculo de la publicacion" required >
-
-          <label for="fechaCr">Fecha de publicacion: </label>
-          <input type="date" id="fechaCr" name="fechaCr" placeholder="Escribe la fecha en la que fue publicado el articulo" >
-
-          <label for="fechaAc">Fecha de acceso: </label>
-          <input type="date" id="fechaAc" name="fechaAc" placeholder="Escribe la fecha en la que accesaste al articulo" required>
-
-          <input type="submit" value="Generar" id="but">
-          <input type="reset" value="Restablecer" id='res'>
-      <br/>
+          <div class="form-group">
+            <label for="nomAutor">Nombre Autor: </label>
+            <input type="text" id="nomAutor" class="form-control" name="nomAutor" placeholder="Escribe el nombre del autor" >
+          </div>
+          <div class="form-group">
+            <label for="apAutor">Apellido Autor: </label>
+            <input type="text" id="apAutor" class="form-control" name="apAutor" placeholder="Escribe el apellido del autor" required >
+          </div>
+          <div class="form-group">
+            <label for="articulo">Nombre Articulo: </label>
+            <input type="text" id="articulo" class="form-control" name="articulo" placeholder="Escribe el nombre del articulo o publicacion" required>
+          </div>
+          <div class="form-group">
+            <label for="URL">URL: </label>
+            <input type="text" id="URL" name="URL" class="form-control" placeholder="Escribe el hipervinculo de la publicacion" required >
+          </div>
+          <div class="form-group">
+            <label for="fechaCr">Fecha de publicacion: </label>
+            <input type="date" id="fechaCr" class="form-control" name="fechaCr" placeholder="Escribe la fecha en la que fue publicado el articulo" >
+          </div>
+          <div class="form-group">
+            <label for="fechaAc">Fecha de acceso: </label>
+            <input type="date" id="fechaAc" class="form-control" name="fechaAc" placeholder="Escribe la fecha en la que accesaste al articulo" required>
+          </div>
+          <input type="submit" class="btn btn-outline-success" value="Generar" id="but">
+          &nbsp;&nbsp;&nbsp;
+          <input type="reset" class="btn btn-outline-danger" value="Restablecer" id='res'>
+      <br/><br/>
     </div>
     <div id="output">
       <br/>
@@ -72,16 +79,18 @@
       <br/>
     </div>
   <!-- FOOTER -->
-    <footer class="container">
-      <p class="float-right"><a href="#">Back to top</a></p>
-      <h2>Informacion de contacto</h2>
-      <ul>
-        <li>Nombre: Hugo David Franco Avila</li>
-        <li>Matricula: A01654856</li>
-        <li>Correo electronico: hfranco21@hotmail.com</li>
-      </ul>
-    </footer>
+  <footer>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2>Informacion de contacto</h2>
+        <p>Nombre: Hugo David Franco Avila</p>
+        <p>Matricula: A01654856</p><p class="float-right"><a href="#">Back to top</a></p>
+        <p>Correo electronico: hfranco21@hotmail.com</p>
+      </div>
+    </div>
+  </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
     <script src="bootstrap/js/bootstrap.min.js" ></script>
+    <script src="js/forma.js"></script>
   </body>
 </html>

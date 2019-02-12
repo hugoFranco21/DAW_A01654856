@@ -1,0 +1,11 @@
+/*Stylesheet for tienda*/
+.Generador, #output{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#output{
+  background-color: #7b53ac;
+  color: #fff;
+  display: none;
+}

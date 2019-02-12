@@ -12,7 +12,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/tienda.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -37,28 +37,31 @@
       </nav>
     </header>
 
-    <div class="productos">
-      <br/>
-      <hr/>
-      <h2 id="titl">Productos</h2><hr/>
-      <table>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1>Productos</h1>
+        <p>Lo último en sneakers al mejor precio.</p>
+      </div>
+    </div>
+
+    <table class="table table-bordered">
         <tr>
           <td class="no-border">
-            <img src="images/jordan1.jpg" alt="Air Jordan 1 Origin Story" /><br/>
+            <img src="images/jordan1.jpg" alt="Air Jordan 1 Origin Story" class="img-thumbnail"/><br/>
             Air Jordan 1<br/>
             Precio: $3200.00<br/>
             Unidades: <input type="number" class="valor" id="p1" /><br/>
             <input type="button" value='Agregar al carrito' id="but1"><br/>
           </td>
           <td>
-            <img src ="images/ultrab.jpg" alt="Adidas Ultraboosts"/><br/>
+            <img src ="images/ultrab.jpg" alt="Adidas Ultraboosts" class="img-thumbnail"/><br/>
             Adidas Ultraboost<br/>
             Precio: $3600.00<br/>
             Unidades: <input type="number" class="valor" id="p2" /><br/>
             <input type="button" value='Agregar al carrito' id="but2"><br/>
           </td>
           <td>
-            <img src="images/jordan4.jpg" alt="Air Jordan 4 Cactus Jack" /><br/>
+            <img src="images/jordan4.jpg" alt="Air Jordan 4 Cactus Jack" class="img-thumbnail" /><br/>
             Air Jordan 4<br/>
             Precio: $4000.00<br/>
             Unidades: <input type="number" class="valor" id="p3" /><br/>
@@ -67,10 +70,10 @@
         </tr>
       </table>
       <br/>
-    </div>
+
     <div class="total">
       <br/>
-      <table>
+      <table class="table table-hover">
         <thead>
           <tr>
             <td>Articulo</td>
@@ -90,21 +93,22 @@
         </tfoot>
 
       </table>
-      <br/>
-      <input type='button' id='checkout' value='Checkout' />
-      <br/><br/><br/>
+      <button type="button" class="btn btn-outline-success" id="checkout">Checkout</button>
+      <br/><br/>
     </div>
   <!-- FOOTER -->
-    <footer class="container">
-      <p class="float-right"><a href="#">Back to top</a></p>
-      <h2>Informacion de contacto</h2>
-      <ul>
-        <li>Nombre: Hugo David Franco Avila</li>
-        <li>Matricula: A01654856</li>
-        <li>Correo electronico: hfranco21@hotmail.com</li>
-      </ul>
+    <footer>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2>Informacion de contacto</h2>
+          <p>Nombre: Hugo David Franco Avila</p>
+          <p>Matricula: A01654856</p><p class="float-right"><a href="#">Back to top</a></p>
+          <p>Correo electronico: hfranco21@hotmail.com</p>
+        </div>
+      </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
     <script src="bootstrap/js/bootstrap.min.js" ></script>
+    <script src="js/tienda.js"></script>
   </body>
 </html>

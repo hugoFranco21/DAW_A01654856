@@ -1,0 +1,10 @@
+/*Stylesheet for tienda*/
+input{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#checkout{
+  float:right;
+  margin-right: 15%;
+}
