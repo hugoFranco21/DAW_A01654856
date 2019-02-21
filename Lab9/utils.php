@@ -16,4 +16,8 @@
 	  include('partials/referencias.html');
   }
   
+  function _forma(){
+	  include('partials/forma.html');
+  }
+  
 ?>
