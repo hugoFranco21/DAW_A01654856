@@ -1,38 +1,73 @@
 <?php
 	
-	function generaArray(){
+	function _inicia(){
+		echo '<div class="bg-secondary text-white" id="scripts">
+				<br/>
+				<h2>Scripts</h2>
+				<br/>
+				<ol>';
+	}
+	
+	function generaArray($n){
 		$arreglo = array();
-		for($i = 0; $i < 10; $i++){
+		for($i = 0; $i < $n; $i++){
 			$arreglo [$i] = mt_rand(0, 100);
 		}
 		return $arreglo;
 	}
 	
-	function _promedio($arreglo){
+	
+	function _promedio($n){
+		
+		$arreglo = generaArray($n);
 		$promedio = 0;
-		for($i = 0; i < count($arreglo); $i++){
-			$promedio += $arreglo[i];
+		echo '<li> Arreglo = ';
+		for($i = 0; $i < count($arreglo); $i++){
+			$promedio += $arreglo[$i];
+			echo $arreglo[$i];
+			if($i <= count($arreglo) - 2){
+				echo ', ';
+			}
 		}
 		$promedio /= count($arreglo);
-		return $promedio;
+		echo '<br/>Promedio = '.$promedio.'</li>';
 	}
 	
-	function _mediana($arreglo){
+	function _mediana($n){
+		$arreglo = generaArray($n);
 		sort($arreglo);
+		echo '<li>Arreglo = ';
+		for($i = 0; $i < count($arreglo); $i++){
+			echo $arreglo[$i];
+			if($i <= count($arreglo) - 2){
+				echo ', ';
+			}
+		}
 		if(count($arreglo) % 2 == 0){
-			return (($arreglo[floor(count($arreglo)/2 - 1)])+($arreglo[count($arreglo)/2 - 1]))/2;   
+			echo '<br/>Mediana = '.(($arreglo[floor(count($arreglo)/2 - 1)])+($arreglo[floor(count($arreglo)/2)]))/2 .'</li>';  
 		} else{
-			return $arreglo[floor(count($arreglo)/2)];
+			echo '<br/>Mediana = '.$arreglo[floor(count($arreglo)/2)].'</li>';
 		}
 	}
 	
-	function _lista(){
-		$arreglo = generaArray();
-		echo '<ul>';
-		//for($i = 0; $i < count($arreglo); $i++){
-		echo '<li>'._promedio($arreglo).'</li>';
-		//}
-		echo '<li>'._mediana($arreglo).'</li>';
+	function _lista($n){
+		$arreglo = generaArray($n);
+		$promedio = 0;
+		echo '<li>Con el arreglo: ';
+		for($i = 0; $i < count($arreglo); $i++){
+			$promedio += $arreglo[$i];
+			echo $arreglo[$i];
+			if($i <= count($arreglo) - 2){
+				echo ', ';
+			}
+		}
+		$promedio /= count($arreglo);
+		echo '<ul><li>Promedio = '.$promedio.'</li>';
+		if(count($arreglo) % 2 == 0){
+			echo '<li>Mediana = '.(($arreglo[floor(count($arreglo)/2 - 1)])+($arreglo[floor(count($arreglo)/2)]))/2 .'</li>';  
+		} else{
+			echo '<li>Mediana = '.$arreglo[floor(count($arreglo)/2)].'</li>';
+		}
 		sort($arreglo);
 		echo '<li>Lista de menor a mayor</li>';
 		echo '<ul>';
@@ -47,12 +82,12 @@
 			echo '<li>'.$arreglo[$i].'</li>';
 		}
 		echo '</ul>
-		</ul>';
+		</ul></li>';
 		
 	}
 	
 	function _tabla($n){
-		echo '<table class="table table striped>
+		echo '<li><table class="table table striped>
 			<thead class="thead-light">
 			<tr>
 				<th scope="col">#</th>
@@ -75,17 +110,24 @@
 			echo '</tr>';
 		}
 		echo '</tbody>
-			</table>';	
+			</table></li>';	
 	}
 	
 	function _ACM($n){
 		//$left = 2.0/$n;
 		if($n < 2){
-			return -1;
+			echo '<li> -1';
 		} else{
-			$numeros = array($n, $n+1, $n($n+1));
-			return $numeros;
+			$numeros = array($n, $n+1, $n*($n+1));
+			echo '<li>Los tres números son: ';
+			for($i = 0; $i < 3; $i++){
+				echo $numeros[$i];
+				if($i < 2) echo ', ';
+			}
+			
 		}
+		
+		echo '</li></ol><br/></div>';
 	}
 	
 	

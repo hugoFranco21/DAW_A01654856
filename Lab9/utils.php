@@ -8,6 +8,10 @@
     include('partials/footer.html');
   }
   
+  function _forma(){
+	  include('partials/forma.html');
+  }
+  
   function _preguntas(){
 	  include('partials/preguntas.html');
   }
@@ -16,8 +20,5 @@
 	  include('partials/referencias.html');
   }
   
-  function _forma(){
-	  include('partials/forma.html');
-  }
   
 ?>
