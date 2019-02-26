@@ -1,0 +1,26 @@
+Hugo David Franco Avila
+A01654856
+
+Preguntas
+
+¿Qué muestra la instrucción sp_help materiales?
+Las columnas de la tabla materiales, con su respectivo tipo, longitud del campo, y sus demás características
+
+Ejecuta las instrucciones que contiene el archivo crear.sql 
+¿Qué efecto tuvo esta acción?
+Creo las 4 tablas con su respectivo nombre
+¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+Si hubiera algún error se pueden borrar todas las tablas, modificar el error, y volverlas a crear con un único comando.
+
+
+Carga masiva de datos
+¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+Vienen los atributos en orden separados por comas
+
+¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+El codepage tiene que ver con la forma en la que se asignan valor para ordenamiento a los caracteres. Field terminator es , porque es como se encuentran separados los atributos, y row terminator es \n porque el salto de linea es como el gestor sabe que se paso a otro registro.
+
+Después de la ejecución del comando, vuelve a revisar el contenido de la tabla materiales mediante el uso de una consulta. 
+¿Qué sucedió? 
+Aparecieron los resultados de la query, que son todos los elementos de la tabla Materiales junto con todos sus atributos.
+
