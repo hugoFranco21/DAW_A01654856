@@ -1,0 +1,66 @@
+Ejercicio 2
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe? 
+Hay dos materiales con la clave 1000, esto es debido a que no se revisa la integridad referencial de las tablas.
+
+Agrega nuevamente el registro a la tabla de materiales:
+¿Qué ocurrió? 
+El registro no se pudo agregar, y marcó un error diciendo que la llave no se puede repetir
+
+sp_helpconstraint materiales 
+¿Qué información muestra esta consulta? 
+Que constraints existen y de que tipo son, el nombre del constraint y la columna llave
+
+¿Qué sentencias utilizaste para definir las llaves primarias? 
+ALTER Table Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
+ALTER Table Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+
+Define el constraint correspondiente a la llave primaria para la tabla entregan, considerando que en este caso, la llave primaria está integrada por varias columnas. 
+¿Qué sentencias utilizaste para definir este constraint? 
+ALTER Table Entregan add constraint llaveEntregan PRIMARY KEY (Clave,RFC,Numero, Fecha)
+Agregue la Fecha porque hay una instancia en la que se repite un registro
+
+Ejercicio 3
+Intenta insertar en la tabla entregan el siguiente registro: 
+  INSERT INTO entregan values (0, 'xxx', 0, '1-jan-02', 0) ; 
+¿Qué particularidad observas en los valores para clave, rfc y numero? 
+Están en un formato distinto con respecto a los otros registros
+¿Cómo responde el sistema a la inserción de este registro?
+Si lo deja insertar, porque cumple la condición de tener valores
+numéricos (0) y el RFC caracteres alfanuméricos
+
+Intenta nuevamente la inserción del registro inconsistente. 
+¿Qué significa el mensaje que emite el sistema? 
+Que la inserción no cumple con el constraint de cfentregan clave, no se puede validar la integridad de la clave en la tabla materiales
+¿Qué significado tiene la sentencia anterior?
+Agrega como llave foránea a Entregan Clave, por lo que debe ser la misma
+Clave para el mismo material en las 2 tablas
+
+Revisa los constraints de cada tabla. Para visualizar los constraints que hemos creado, se utiliza la siguiente sentencia: 
+sp_helpconstraint tableName 
+¿Qué significan las columnas de esas consultas? 
+Muestran el tipo de constraint (llave primaria | llave foránea), el nombre
+de la constraint, las acciones que se llevan acabo al borrar o actualizar,
+y las columnas que usa de llaves.
+
+Ejercicio 4
+Lista el registro que acabas de crear. 
+¿Qué uso se le está dando a GETDATE()? 
+Obtiene la fecha del día de hoy
+¿Tiene sentido el valor del campo de cantidad? 
+No, porque no tiene sentido hacer una entrega sin materiales.
+
+Intenta insertar un registro con cantidad igual o menor que 0. 
+¿Cómo responde el sistema? 
+Responde diciendo que hay un conflicto con el registro que tratamos de insertar
+con la constraint check Cantidad
+¿Qué significa el mensaje? 
+Que estamos tratando de insertar un valor no válido a una columna
+de la tabla Entregan, en este caso a la columna Cantidad
+
+Integridad Referencial: Es una regla de integridad, que afirma que 
+si en una relación existe una clave externa, entonces o el valor de
+la clave externa debe coincidir con el valor de la clave primaria
+de alguna tupla en su relación base, o el valor de la clave externa
+debe ser completamente nulo.[1]
+
+[1] C. M. Ricardo. "El Modelo Relacional" en Bases de Datos, 1era ed. R. A. del Bosque, Ed. México, D.F., McGraw-Hill, 2009, pp. 131-132
