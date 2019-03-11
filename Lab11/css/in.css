@@ -1,0 +1,18 @@
+.preg, .referencias, #scripts{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.referencias{
+  /*background-color: #f1f1f1;*/
+  margin-bottom: -16px;
+}
+
+#code{
+	color: #ffffff;
+}
+
+a{
+	cursor: pointer;
+}
+

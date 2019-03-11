@@ -1,0 +1,39 @@
+<div class="preg" id="preguntas">
+      <br/>
+	  <h2>Preguntas</h2>
+		<h3>¿Por qué es una buena práctica separar el controlador de la vista?</h3>
+			  <p class="text-justify">
+			   Para que el usuario no tenga acceso a información privada de otros usuarios, o al
+         funcionamiento interno de la aplicación. También hace que el código se pueda reusar
+          más fácilmente, y más sencillo de implementar cualquier cambio a la
+          interfaz gráfica.<a href="#ref">[1]</a><br/>
+		<h3>Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</h3>
+			<p class="text-justify">
+				Los arreglos son los siguientes: <a href="#ref">[2]</a><br/>
+        <ul>
+          <li>$GLOBALS: Recupera las variables globales en cualquier punto del script</li>
+          <li>$_SERVER: Engloba información sobre headers, paths y locaciones de scripts</li>
+          <li>$_REQUEST: Se usa para recoger datos después de subir una forma</li>
+          <li>$_FILES: Variable que puede usarse para subir archivos</li>
+          <li>$_ENV: Se usa para regresar las variables del medio del servidor web <a href="#ref">[3]</a><br/></li>
+          <li>$_COOKIE: Recupera las cookies del usuario</li>
+          <li>$_SESSION: Se puede usar para acceder a la información del servidor que esté guardada
+          en la sesión abierta actual</li>
+        </ul>
+		<h3>Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</h3>
+			<p class="text-justify">
+				Una funcion de PHP que me pareció muy interesante es implode() o join(), que lo que hacen es juntar el contenido
+        de un array en una sola linea que se puede llamar con echo, perimitiendo imprimir una lista de forma
+        muy sencilla. <a href="#ref">[4]</a><br/>
+        Otra función que llamó mi atención es htmlspecialchars(), esta permite cambiar caracteres predefinidos a
+        entidades HTML, con los que se permite, por ejemplo, escribir &lt;scriptalert('hello')&gt; sin que se mande a
+        ejecutar el JavaScript. <a href="#ref">[5]</a><br/>
+
+    <h3>¿Qué es XSS y cómo se puede prevenir?</h3>
+    	<p class="text-justify">
+    		Es la inyección de scripts maliciosos a sitios confiables. Permite a los atacantes ejecutar
+         scripts en el navegador de otro usuario sin que este pueda saber que es malicioso. Se puede
+         prevenir realizando validaciones a los campos que son ingresados por el usuario y encriptando los datos. <a href="#ref">[6]</a><br/>
+
+	   <br/>
+</div>

@@ -1,0 +1,48 @@
+<div class="bg-secondary text-white" id="scripts">
+<br/>
+<h2>Registro club de fans de Los Angeles Azules </h2>
+Favor de escribir todos los campos sin acentos [´]
+<br/>
+<form action="action.php" method="POST">
+  <div class="form-group">
+    <label for="nombre">Ingrese su nombre</label>
+    <input type="text" class="form-control" name="nombre" placeholder="Nombre"><!--span class="text-danger"><?php echo $nombreErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="apellido">Ingrese su apellido</label>
+    <input type="text" class="form-control" name="apellido" placeholder="Apellido"><!-- span class="text-danger"><?php echo $apellidoErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="edad">Ingrese su edad</label>
+    <input type="number" class="form-control" name="edad" placeholder="Edad"><!-- span class="text-danger"><?php echo $edadErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="direccion">Ingrese su direccion</label>
+    <input type="text" class="form-control" name="direccion" placeholder="Direccion"><!-- span class="text-danger"><?php echo $direccionErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="CP">Ingrese su codigo postal</label>
+    <input type="text" class="form-control" name="CP" placeholder="C.P."><!-- span class="text-danger"><?php echo $CPErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="ciudad">Ingrese su ciudad</label>
+    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad"><!-- span class="text-danger"><?php echo $ciudadErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="estado">Ingrese su estado</label>
+    <input type="text" class="form-control" name="estado" placeholder="Estado"><!-- span class="text-danger"><?php echo $estadoErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="cancion">Escriba el nombre de su cancion favorita de Los Angeles Azules</label>
+    <input type="text" class="form-control" name="cancion" placeholder="Cancion"><!-- span class="text-danger"><?php echo $cancionErr;?></span -->
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="code" name="terms">
+    <label class="form-check-label" for="terms">
+      He leído los <a href="https://www.youtube.com/watch?v=daL7_QWYdkk" target=_blank id="code">términos y condiciones</a>
+    </label><!-- span class="text-danger"><?php echo $termsErr;?></span -->
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br/>
