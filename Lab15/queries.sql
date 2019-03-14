@@ -75,9 +75,28 @@ RFC IN ( SELECT [RFC]
 FROM [Proveedores] 
 WHERE RazonSocial LIKE 'La%' and [Entregan].[RFC] = [Proveedores].[RFC] ) 
 
-SELECT RFC,Cantidad, Fecha,Numero 
-FROM [Entregan] 
-WHERE [Numero] Between 5000 and 5010 AND 
-RFC NOT IN  ALL( SELECT [RFC] 
-FROM [Proveedores] 
-WHERE RazonSocial LIKE 'La%' and [Entregan].[RFC] = [Proveedores].[RFC] ) 
+SELECT E.RFC, Cantidad, Fecha, Numero
+FROM Entregan E, Proveedores P
+WHERE RazonSocial LIKE 'LA%' AND E.RFC = P.RFC AND
+Numero NOT IN(SELECT Numero
+FROM Entregan 
+WHERE Numero < 5000 or Numero > 5010)
+
+SELECT DISTINCT RFC
+FROM Entregan
+WHERE Numero = ANY(
+SELECT Numero 
+FROM Proyectos) 
+
+SELECT TOP 2 * FROM Proyectos 
+
+SELECT TOP 1 Numero FROM Proyectos
+
+ALTER TABLE materiales ADD PorcentajeImpuesto NUMERIC(6,2);
+
+UPDATE materiales SET PorcentajeImpuesto = 2*clave/1000;
+
+SELECT *
+FROM Materiales
+
+
