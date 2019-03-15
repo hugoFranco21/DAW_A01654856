@@ -241,7 +241,12 @@ AS SELECT Q.Clave, ([Cantidad Total]*Costo+[Cantidad Total]*Costo*0.01*Porcentaj
 FROM Materiales M, MaterialEntregado Q
 WHERE Q.Clave=M.Clave
 
+CREATE VIEW MatProy
+AS SELECT Denominacion
+
 SELECT Descripcion, [Numero de Entregas], [Total a pagar]
 FROM NumEntregasC NC, PagoMaterial P, Materiales M
 WHERE M.Clave=P.Clave AND M.Clave=NC.Clave
 ORDER BY Descripcion
+
+
