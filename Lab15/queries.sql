@@ -239,7 +239,7 @@ GROUP BY Clave
 CREATE VIEW PagoMaterial
 AS SELECT Q.Clave, ([Cantidad Total]*Costo+[Cantidad Total]*Costo*0.01*PorcentajeImpuesto) as 'Total a Pagar'
 FROM Materiales M, MaterialEntregado Q
-WHERE Q.Clave=M.Clave
+WHERE Q.Clave=M.Clave AND Q.
 
 CREATE VIEW MatProy
 AS SELECT Denominacion
@@ -249,4 +249,8 @@ FROM NumEntregasC NC, PagoMaterial P, Materiales M
 WHERE M.Clave=P.Clave AND M.Clave=NC.Clave
 ORDER BY Descripcion
 
-
+SELECT Pr.Denominacion, M.Descripcion, SUM(M.Costo*E.Cantidad + M.Costo*E.Cantidad*0.01*M.PorcentajeImpuesto) as 'Pagado', count(M.descripcion) as 'Veces Entregado'
+FROM Entregan E, Proyectos Pr, Materiales M
+WHERE E.Clave=M.Clave AND Pr.Numero=E.Numero
+GROUP BY Pr.Denominacion, M. Descripcion
+ORDER BY Pr.Denominacion
