@@ -225,7 +225,23 @@ SELECT E.RFC
 FROM Proveedores P, Proyectos Pr, Entregan E
 WHERE E.RFC=P.RFC AND Pr.Numero=E.Numero AND Denominacion='Educando en Coahuila'))
 
-SELECT Descripcion, count(fecha) as 'Numero de Entregas', Costo*Cantidad+Costo*Cantidad*0.01*PorcentajeImpuesto as 'Costo Material'
+CREATE VIEW NumEntregasC
+AS SELECT Materiales.Clave, count(fecha) as 'Numero de Entregas'
 FROM Materiales, Entregan
 WHERE Materiales.Clave=Entregan.Clave
-GROUP BY Descripcion, Costo, Cantidad, PorcentajeImpuesto
+GROUP BY Materiales.Clave
+
+CREATE VIEW MaterialEntregado
+AS SELECT Clave, sum(Cantidad) as 'Cantidad Total'
+FROM Entregan 
+GROUP BY Clave
+
+CREATE VIEW PagoMaterial
+AS SELECT Q.Clave, ([Cantidad Total]*Costo+[Cantidad Total]*Costo*0.01*PorcentajeImpuesto) as 'Total a Pagar'
+FROM Materiales M, MaterialEntregado Q
+WHERE Q.Clave=M.Clave
+
+SELECT Descripcion, [Numero de Entregas], [Total a pagar]
+FROM NumEntregasC NC, PagoMaterial P, Materiales M
+WHERE M.Clave=P.Clave AND M.Clave=NC.Clave
+ORDER BY Descripcion
