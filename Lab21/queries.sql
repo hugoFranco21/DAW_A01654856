@@ -147,3 +147,75 @@ GO
 EXECUTE eliminaProyecto 1234
 ----------------------------------------------
 ----------------Entregan---------------------
+IF EXISTS (SELECT name FROM sysobjects
+	WHERE name = 'creaEntrega' AND type = 'P')
+	DROP PROCEDURE creaEntrega
+GO
+
+CREATE PROCEDURE creaEntrega
+	@uClave NUMERIC(5,0),
+	@uRFC VARCHAR(13),
+	@uNumero NUMERIC(5,0),
+	@uFecha DATETIME,
+	@uCantidad NUMERIC(8,2)
+AS
+	INSERT INTO Entregan VALUES(@uClave, @uRFC, @uNumero, @uFecha, @uCantidad)
+GO
+SET DATEFORMAT dmy
+EXECUTE creaEntrega 5000,'FAAH990821',1234,'21/03/2019',420
+
+SELECT * FROM Entregan
+
+IF EXISTS (SELECT name FROM sysobjects
+	WHERE name = 'modificaEntrega' AND type = 'P')
+	DROP PROCEDURE modificaEntrega
+GO
+
+CREATE PROCEDURE modificaEntrega
+	@uClave NUMERIC(5,0),
+	@uRFC VARCHAR(13),
+	@uNumero NUMERIC(5,0),
+	@uFecha DATETIME,
+	@uCantidad NUMERIC(8,2)
+AS
+	UPDATE Entregan
+	SET Cantidad=@uCantidad
+	WHERE Clave=@uClave AND RFC=@uRFC AND Numero=@uNumero AND Fecha=@uFecha
+GO
+
+EXECUTE modificaEntrega 5000,'FAAH990821',1234,'21/03/2019',124
+
+-----------------------------------------------------
+IF EXISTS (SELECT name FROM sysobjects
+	WHERE name = 'eliminaEntrega' AND type = 'P')
+	DROP PROCEDURE eliminaEntrega
+GO
+
+CREATE PROCEDURE eliminaEntrega
+	@uClave NUMERIC(5,0),
+	@uRFC VARCHAR(13),
+	@uNumero NUMERIC(5,0),
+	@uFecha DATETIME
+AS
+	DELETE FROM Entregan
+	WHERE Clave=@uClave AND RFC=@uRFC AND Numero=@uNumero AND Fecha=@uFecha
+GO
+
+EXECUTE eliminaEntrega 5000,'FAAH990821',1234,'21/03/2019'
+
+----------------------------------------------------------
+IF EXISTS (SELECT name FROM sysobjects
+	WHERE name = 'queryMaterial' AND type = 'P')
+	DROP PROCEDURE queryMaterial
+GO
+
+CREATE PROCEDURE queryMaterial
+	@udescripcion VARCHAR(50),
+	@ucosto NUMERIC(8,2)
+
+AS
+	SELECT * FROM Materiales WHERE descripcion
+	LIKE '%'+@udescripcion+'%' AND costo > @ucosto
+GO
+
+EXECUTE queryMaterial 'Lad',20 
