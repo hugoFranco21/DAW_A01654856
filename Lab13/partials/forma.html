@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+            </div>
+            <div class="form-group">
+              <label for="PWD">Contraseña</label>
+              <input type="password" class="form-control" name="PWD">
+            </div>
+            <input type="cancel" class="btn btn-danger" data-dismiss="modal" value="Cancelar" />
+            <input type="submit" class="btn btn-primary" value="Login" />
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

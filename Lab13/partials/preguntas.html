@@ -1,0 +1,23 @@
+<div class="preg" id="preguntas">
+      <br/>
+	  <h2>Preguntas</h2>
+		<h3>¿Por qué es importante hacer un session_unset() y luego un session_destroy()?</h3>
+			  Porque usar únicamente el session_destroy() sólo borra los datos de la sesión,
+        el resto de las variables $_SESSION siguen con el valor que se les da, entonces
+        con otro session_start() se podría recuperar esta información y ser
+        robada maliciosamente. <a href="#ref">[1]</a><br/>
+		<h3>¿Cuál es la diferencia entre una variable de sesión y una cookie?</h3>
+			<p class="text-justify">
+				La variable de sesión no se guarda en la computadora del usuario, la cookie sí. <a href="#ref">[2]</a><br/>
+		<h3>¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</h3>
+			<p class="text-justify">
+			  Facebook utiliza un identificador especial para cada archivo, con lo que evita que se repita el nombre de algún archivo. <a href="#ref">[3]</a><br/>
+    <h3>¿Qué es CSRF y cómo puede prevenirse?</h3>
+    	<p class="text-justify">
+    		Es un tipo de ataque en el cual el atacante inserta código malicioso en una página
+        donde un usuario esta loggeado para que se ejecute y se haga alguna acción maliciosa,
+        como robar dinero, información, etc. Se puede prevenir usando cookies como verificadores
+        de que sea el usuario el que está realizando los movimientos y usando POST como método
+        de envío de formularios. <a href="#ref">[4]</a><br/>
+	   <br/>
+</div>
