@@ -1,4 +1,4 @@
-.preg, .referencias, #scripts{
+.preg, .referencias, #scripts, .imagen{
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -19,4 +19,5 @@ a{
 img{
   width: 50%;
   height: auto;
+  margin-left: 5%;
 }

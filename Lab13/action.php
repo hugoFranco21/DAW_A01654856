@@ -1,20 +1,22 @@
 <?php
-
+  session_start();
   require_once('utils.php');
-  require_once('funciones.php');
-  _header();
-  //WIOAHFUOSHFDOIFJD
-  if(validar()){
-    _despliega($GLOBALS['nombre'],$GLOBALS['apellido'],$GLOBALS['edad'],$GLOBALS['direccion'],$GLOBALS['CP'],$GLOBALS['ciudad'],$GLOBALS['estado'],$GLOBALS['cancion']);
-  } else{
-    //echo 'Error<br/>';
-    _dForma($GLOBALS['nombreErr'],$GLOBALS['apellidoErr'],$GLOBALS['edadErr'],$GLOBALS['direccionErr'],$GLOBALS['CPErr'],$GLOBALS['ciudadErr'],$GLOBALS['estadoErr'],$GLOBALS['cancionErr'],$GLOBALS['termsErr'],$GLOBALS['nombre'],$GLOBALS['apellido'],$GLOBALS['edad'],$GLOBALS['direccion'],$GLOBALS['CP'],$GLOBALS['ciudad'],$GLOBALS['estado'],$GLOBALS['cancion']);
-    echo '</div>';
+  if(empty($_POST['usuario']) || empty($_POST['PWD'])){
+
+    echo '<h1>No puede dejar campos vacíos</h1>';
+    sleep(1);
+    echo '<script>window.location.href = "index.php"</script>';
+
+    //sleep(5);
   }
+  if(!isset($_SESSION['usuario'])){
+    $_SESSION['usuario']=test_input($_POST['usuario']);
+  }
+  _header($_SESSION['usuario']);
+  _ses();
+  _forma();
 
-  /**/
-
-  //S,DNFSDBVIBSDVN
+  _subir();
   _preguntas();
   _referencias();
   _footer();
