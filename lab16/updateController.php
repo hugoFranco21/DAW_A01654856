@@ -37,8 +37,37 @@
         _referencias();
         _footer();
       }
+    } else {
+      _header();
+      consul();
+      echo '<h4 class="text-danger">Cantidad, Precio y Unidades deben ser numéricos</h4>';
+      echo '<h3 class="text-white">Toda la tabla fruits</h3>';
+      imprime_consulta(getFruits());
+      echo '<br/>
+            </div>';
+      _forma('Insertar registro','fruit.php');
+      _forma('Actualizar registro','updateController.php');
+      _smallForm('Borrar registro','deleteController.php');
+      _preguntas();
+      _referencias();
+      _footer();
     }
+  } else {
+    _header();
+    consul();
+    echo '<h4 class="text-danger">Hay campos vacíos</h4>';
+    echo '<h3 class="text-white">Toda la tabla fruits</h3>';
+    imprime_consulta(getFruits());
+    echo '<br/>
+          </div>';
+    _forma('Insertar registro','fruit.php');
+    _forma('Actualizar registro','updateController.php');
+    _smallForm('Borrar registro','deleteController.php');
+    _preguntas();
+    _referencias();
+    _footer();
   }
+
 
 
 ?>
