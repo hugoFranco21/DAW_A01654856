@@ -1,9 +1,10 @@
 <?php
+
   function connectDB(){
     $servername = "localhost";
-    $username = "root";
+    $username = "hugofranco21";
     $password = "";
-    $dbname = "daw_bd";
+    $dbname = "examen2";
 
     $con = new mysqli($servername, $username, $password, $dbname);
 
@@ -17,126 +18,42 @@
     $mysql->close();
   }
 
-  function getFruits(){
+  function getIncidents(){
     $conn = connectDB();
-    $query="SELECT name, units, quantity, price, country FROM Fruit";
-    if($stmt = $conn->prepare($query)){
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-
-
-  }
-
-  function getFruitsByName($fruit_name){
-    $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE NAME LIKE %?%";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$fruit_name);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
+    $query="SELECT fecha_hora, nombre, denominacion FROM Incidentes";
+    $result = mysqli_query($conn, $query);
     closeDB($conn);
     return $result;
   }
 
-  function getCheapestFruits($cheap_price){
+  function getLugares(){
     $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE price <= ?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('d',$fruit_name);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
+    $query="SELECT nombre FROM Lugar";
+    $result = mysqli_query($conn, $query);
     closeDB($conn);
     return $result;
   }
 
-  function getFruitsByCountry($country){
+  function getTipos(){
     $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE country LIKE %?%";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$country);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
+    $query="SELECT denominacion FROM Tipo";
+    $result = mysqli_query($conn, $query);
     closeDB($conn);
     return $result;
   }
 
-  function getFruitsByUnits($units){
+  function insertarIncidente($nombre,$den){
     $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE units >= ?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('i',$units);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-  }
-
-  function insertFruit($name, $units, $quantity, $price, $country){
-    $conn = connectDB();
-    //$sql = "INSERT INTO Fruit (Name, Units, Quantity, Price, Country) VALUES('".$name."', '".$units."','".$quantity."','".$price."','".$country."')";
-    $sql = "INSERT INTO Fruit (Name, Units, Quantity, Price, Country) VALUES(?,?,?,?,?)";
-
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('siids',$name,$units,$quantity,$price,$country);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
+    $sql = "call RegistrarIncidente(".$nombre.",".$den.")";
+    if(mysqli_query($conn,$sql)){
+        closeDB($conn);
+        return true;
     } else{
-      closeDB($conn);
-      return false;
+        closeDB($conn);
+        return false;
     }
     closeDB($conn);
   }
-
-  function delete_by_name($name){
-    $conn = connectDB();
-    $sql = "DELETE FROM Fruit Where name = ?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$name);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
-    } else{
-      closeDB($conn);
-      return false;
-    }
-    closeDB($conn);
-  }
-
-  function update_by_name($name, $units, $quantity, $price, $country){
-    $conn = connectDB();
-    //$sql = "UPDATE Fruit SET name=?, units=".$units.", quantity=".$quantity.", price=".$price.",country='".$country."' WHERE name='".$name."'";
-    $sql = "UPDATE Fruit SET units=?, quantity=?, price=?,country=? WHERE name=?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('iidss',$units,$quantity,$price,$country,$name);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
-    } else{
-      closeDB($conn);
-      return false;
-    }
-    closeDB($conn);
-  }
-
-
+  
 
 ?>
