@@ -12,6 +12,10 @@
     include('partials/footer.html');
   }
 
+  function _formAjax(){
+    include('partials/ajax.html');
+  }
+
   function _forma($nom,$scrt){
 	  include('partials/forma.html');
   }
