@@ -27,8 +27,27 @@
     }
     closeDB($conn);
     return $result;
+  }
 
-
+  function getFruitName(){
+    $conn = connectDB();
+    $query="SELECT name FROM Fruit";
+    if($stmt = $conn->prepare($query)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    $ar=array();
+    $i=0;
+    while($row = mysqli_fetch_assoc($result)){
+      $ar[$i]=$row['name'];
+      $i++;
+    }
+    //var_dump($ar);
+    //die();
+    return $ar;
+    //return $result;
   }
 
   function getFruitsByName($fruit_name){

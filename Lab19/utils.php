@@ -73,4 +73,5 @@
   function consul(){
     include('partials/secCon.html');
   }
+
 ?>
