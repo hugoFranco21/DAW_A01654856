@@ -8,13 +8,23 @@ function getRequestObject(){
   }
 }
 
-$(document).ready(function(){
-  $("#busquedaFruta").keydown(function(){
-    $.get("frutasAjax.php?pattern="+$("#busquedaFruta").val(), "yellow");
-  });
-});
-
 function sendRequestF(){
+  //$(document).ready(function(){
+    //$("#busquedaFruta").keydown(function(){
+      //$.get("frutasAjax.php",{ pattern: $('#busquedaFruta').val()})
+      $.get("frutasAjax.php",{ pattern: document.getElementById('busquedaFruta').value })
+      .done(function(data){
+        /*$('#Registros').html(data);
+        $('#Registros').show();*/
+        var ajaxResponse=document.getElementById('Registros');
+        ajaxResponse.innerHTML=request.responseText;
+        ajaxResponse.style.visibility="visible";
+      });
+  //  });
+  //});
+}
+
+/*function sendRequestF(){
   request=getRequestObject();
   if(request!=null){
     var userInput=document.getElementById('busquedaFruta');
@@ -30,7 +40,7 @@ function sendRequestF(){
       };
     request.send(null);
   }
-}
+}*/
 
 function selectValueF(){
   var list=document.getElementById("listF");
