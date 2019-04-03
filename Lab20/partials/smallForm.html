@@ -2,16 +2,16 @@
 <br/>
 <h3 class="text-white"><?=$nom?></h3>
 <br/>
-<form action="<?=$scrt?>" method="POST" class="text-white">
+<form action="<?=$scrt?>" method="POST" class="text-white" id="formBorrar">
   <div class="form-group">
     <label for="nombre">Ingrese el nombre de la fruta</label>
     <!--input type="text" class="form-control" name="nameFruit" placeholder="Nombre de la fruta" id="busquedaFruta" onkeyup="sendRequestF()" /-->
-    <input type="text" class="form-control" name="nameFruit" placeholder="Nombre de la fruta" id="busquedaFruta" onkeyup="sendRequestF"/>
+    <input type="text" class="form-control" name="nameFruit" placeholder="Nombre de la fruta" id="busquedaFruta" />
     <div id="Registros">
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" id="butBorrar">Submit</button>
 </form>
 <br/>
 

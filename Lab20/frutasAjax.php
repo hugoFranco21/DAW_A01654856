@@ -1,6 +1,6 @@
 <?php
   require_once('util.php');
-  $pattern=strtolower($_GET['patternF']);
+  $pattern=strtolower($_GET['pattern']);
   $words=getFruitName();
   //var_dump($words);
   //die();
@@ -18,5 +18,6 @@
   }
   if($size > 0){
     echo "<select id=\"listF\" size=$size onclick=\"selectValueF()\">$response</select>";
+    //echo "<select id=\"listF\" size=$size >$response</select>";
   }
 ?>
