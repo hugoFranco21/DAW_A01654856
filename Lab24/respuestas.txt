@@ -1,0 +1,27 @@
+Revisa el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión: 
+SELECT * FROM CLIENTES_BANCA 
+¿Que pasa cuando deseas realizar esta consulta? 
+Aparece la tabla normalmente, con los registros que se acaban de insertar
+
+Revisa el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión. 
+SELECT * FROM CLIENTES_BANCA 
+¿Qué pasa cuando deseas realizar esta consulta? 
+La query se mantiene en estado de carga, SQL Server bloquea el despliegue de la tabla
+
+Intenta con la siguiente consulta desde la segunda sesión: 
+SELECT * FROM CLIENTES_BANCA where NoCuenta='001' 
+Explica por qué ocurre dicho evento. 
+Desplegó el registro de la cuenta 001. Lo hizo porque no es parte de la transacción que quedó abierta
+
+Revisa nuevamente el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión: 
+SELECT * FROM CLIENTES_BANCA
+¿Qué ocurrió y por qué? 
+Ya permite realizar la consulta, se muestran los 3 registros ingresados al principio porque la transacción con los siguientes 3 se canceló.
+
+¿Para qué sirve el comando @@ERROR revisa la ayuda en línea? 
+Sirve para recuperar el código del último error, si es igua a 0, significa que no hubo ninguno
+¿Qué hace la transacción? 
+Inserta registros a la tabla clientes_banca, y si detecta algún error hace un rollback de la transacción, del caso contrario hace commit.
+¿Hubo alguna modificación en la tabla? Explica qué pasó y por qué. 
+No, ya que al tratar de insertar un registro con una llave primaria que ya existe, el sistema despliega un error, por lo que se abortó la transacción
+
