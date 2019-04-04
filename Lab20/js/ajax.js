@@ -23,7 +23,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $("formBorrar").submit(function (ev){
+  $("#formBorrar").submit(function (ev){
     ev.preventDefault();
      var nombre= $('#busquedaFruta').val();
      console.log(nombre);
@@ -47,7 +47,7 @@ $(document).ready(function(){
 
 $(document).ready(imprimir());
 
-function imprimir(data){
+function imprimir(){
   $.post('tablaController.php')
   .done(function(data){
   $('#tablaFruits').html(data);
