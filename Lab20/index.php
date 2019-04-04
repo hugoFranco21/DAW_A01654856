@@ -3,10 +3,9 @@
   require_once('util.php');
   _header();
   consul();
-  echo '<h3 class="text-white">Toda la tabla fruits</h3>';
-  imprime_consulta(getFruits());
+
   _forma('Insertar registro','fruit.php');
-  _smallForm('Borrar registro','deleteController.php');
+  _smallForm('Borrar registro');
   echo '<br/>
         </div>';
   _preguntas();

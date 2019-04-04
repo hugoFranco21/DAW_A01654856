@@ -20,7 +20,7 @@
 	  include('partials/forma.html');
   }
 
-  function _smallForm($nom,$scrt){
+  function _smallForm($nom){
 	  include('partials/smallForm.html');
   }
 

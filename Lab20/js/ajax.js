@@ -20,28 +20,39 @@ $(document).ready(function(){
         $('#Registros').show();
       });
   });
-
-  $("formBorrar").submit(function (event){
-    event.preventDefault();
-    var $form = $( this ),
-    term = $form.find( "input[name='nameFruit']" ).val(),
-    url = $form.attr( "action" );
-
-
-    // Send the data using post
-    var posting = $.post( url, { nameFruit: term })
-    //.done()
-  });
-  /*$("#listF").click(function(){
-    console.log($(this).val());
-    $('#busquedaFruta').val($("#listF").val());//, function(){
-      //$('#listF').hide("fast",
-        //function(){$('#busquedaFruta').focus();
-        //});
-      //});
-    });*/
-
 });
+
+$(document).ready(function(){
+  $("formBorrar").submit(function (ev){
+    ev.preventDefault();
+     var nombre= $('#busquedaFruta').val();
+     console.log(nombre);
+     $.post('deleteController.php', { nameFruit : nombre } )
+     /*$.ajax({
+       url: 'guardar.php',
+       type: 'POST',
+       data:{id_lugar:lugar,id_incidente:incidente},
+       dataType:'text',
+     })*/
+     .done(function(data){
+       console.log(nombre);
+       imprimir(data);
+      })
+      .fail(function(){
+        imprimir(data);
+        console.log('Error');
+      });
+    });
+});
+
+$(document).ready(imprimir());
+
+function imprimir(data){
+  $.post('tablaController.php')
+  .done(function(data){
+  $('#tablaFruits').html(data);
+  });
+}
 //}
 
 /*function sendRequestF(){
