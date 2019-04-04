@@ -1,4 +1,6 @@
-    <h2>Incidentes 1</h2>
+    <h2>Incidentes <?php require_once('utils.php');
+                         require_once('util.php');
+                         echo numRows(getIncidents());?></h2>
       <table class="highlight">
         <thead>
           <tr>

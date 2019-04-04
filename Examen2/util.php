@@ -44,13 +44,17 @@
 
   function insertarIncidente($nombre,$den){
     $conn = connectDB();
-    $sql = "call RegistrarIncidente(".$nombre.",".$den.")";
-    if(mysqli_query($conn,$sql)){
-        closeDB($conn);
-        return true;
+    $sql = "call RegistrarIncidente(?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ss',$nombre,$den);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
     } else{
-        closeDB($conn);
-        return false;
+      closeDB($conn);
+      return false;
     }
     closeDB($conn);
   }

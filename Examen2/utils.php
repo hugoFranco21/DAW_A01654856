@@ -33,10 +33,14 @@
         if(mysqli_num_rows($result) > 0){
             $i = mysqli_num_rows($result);
             while($row = mysqli_fetch_assoc($result)){
-                echo '<option value="'.$i.'">'.$row["$nom"].'</option>';
+                echo '<option value="'.$row["$nom"].'">'.$row["$nom"].'</option>';
                 $i++;
             }
         }
+    }
+    
+    function numRows($result){
+        return mysqli_num_rows($result);
     }
     
 ?>

@@ -15,9 +15,9 @@
         $tipo = $_POST['Tipo'];
     }
     
-    var_dump($tipo);
-    var_dump($lugar);
-    die();
+    //var_dump($tipo);
+    //var_dump($lugar);
+    //die();
     if(insertarIncidente($lugar,$tipo)){
         _header();
         _tablaIncidentes();
