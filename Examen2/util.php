@@ -59,5 +59,12 @@
     closeDB($conn);
   }
   
+  function contarRegistros(){
+    $conn = connectDB();
+    $sql = "SELECT COUNT(*) as Numero FROM Incidentes";
+    $result = mysqli_query($conn, $sql);
+    closeDB($conn);
+    return $result;
+  }
 
 ?>

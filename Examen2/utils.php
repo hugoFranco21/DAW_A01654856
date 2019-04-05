@@ -21,26 +21,25 @@
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
             echo '<tr>';
-            echo '<td>'.$row["fecha_hora"].'</td>';
-            echo '<td>'.$row["nombre"].'</td>';
-            echo '<td>'.$row["denominacion"].'</td>';
+            echo '<td>'.$row['fecha_hora'].'</td>';
+            echo '<td>'.$row['nombre'].'</td>';
+            echo '<td>'.$row['denominacion'].'</td>';
             echo '</tr>';
             }
         }
     }
     
-    function displayOptions($result,$nom){
+    function displayOptions($result){
         if(mysqli_num_rows($result) > 0){
-            $i = mysqli_num_rows($result);
-            while($row = mysqli_fetch_assoc($result)){
-                echo '<option value="'.$row["$nom"].'">'.$row["$nom"].'</option>';
-                $i++;
+            while($row = mysqli_fetch_row($result)){
+                echo '<option value="'.$row[0].'">'.$row[0].'</option>';
             }
         }
     }
     
     function numRows($result){
-        return mysqli_num_rows($result);
+        $data=mysqli_fetch_assoc($result);
+        echo 'Incidentes '.$data['Numero'];
     }
     
 ?>
