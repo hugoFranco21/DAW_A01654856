@@ -10,18 +10,14 @@
     if(is_numeric($quantity) && is_numeric($price)){
       if(insertfruit($name,$units,$quantity,$price,$country)){
         echo '<script>alert("La inserción se realizó exitosamente")</script>';
-        header('Location: index.php');
       } else{
         echo '<script>alert("La inserción no se pudo realizar")</script>';
-        header('Location: index.php');
       }
     } else {
       echo '<script>alert("La inserción no se pudo realizar")</script>';
-      header('Location: index.php');
     }
   } else {
     echo '<script>alert("La inserción no se pudo realizar")</script>';
-    header('Location: index.php');
   }
 
 ?>
