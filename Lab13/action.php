@@ -9,7 +9,7 @@
 
     //sleep(5);
   }
-  if(!isset($_SESSION['usuario'])){
+  if(!isset($_SESSION['usuario']) && isset($_POST['usuario'])){
     $_SESSION['usuario']=test_input($_POST['usuario']);
   }
   _header($_SESSION['usuario']);
