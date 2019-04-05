@@ -3,32 +3,15 @@
     require_once('utils.php');
   
     
-    if(!isset($lugar)){
-        $lugar = $_POST['Lugar'];
+    if(isset($_POST['Lugar']) && isset($_POST['Tipo'])){
+        $lugar = htmlspecialchars($_POST['Lugar']);
+        $tipo = htmlspecialchars($_POST['Tipo']);
+        if(insertarIncidente($lugar,$tipo)){
+            echo '<script type="text/javascript">alert("La insercion se realizó exitosamente")</script>';
+        } else{
+            echo '<script type="text/javascript">alert("La insercion no se pudo realizar")</script>';
+        }
     } else{
-        $lugar = $_POST['Lugar'];
-    }
-    
-    if(!isset($tipo)){
-        $tipo = $_POST['Tipo'];
-    } else{
-        $tipo = $_POST['Tipo'];
-    }
-    
-    var_dump($tipo);
-    var_dump($lugar);
-    die();
-    if(insertarIncidente($lugar,$tipo)){
-        _header();
-        _tablaIncidentes();
-        _formaRegistro();
-        echo '<br/><h3 class="green">Registro insertado con éxito!</h3><br/>';
-        _footer();
-    } else{
-        _header();
-        _tablaIncidentes();
-        _formaRegistro();
-        echo '<br/><h3 class="red">Registro no insertado</h3><br/>';
-        _footer();
+        echo '<script type="text/javascript">alert("Debes elegir un lugar y un tipo para poder registrar el incidente")</script>';
     }
 ?>

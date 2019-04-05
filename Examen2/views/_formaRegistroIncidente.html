@@ -1,26 +1,19 @@
 <h2>Registra un incidente</h2>
 <div class="row">
-    <form class="col s12" method="POST" action="insertController.php">
+    <form class="col s12" id="formRegistro">
       <div class="row">
           <div class="input-field col s12" >
-            <select name="Lugar">
+            <select name="Lugar" id="listaLugares">
               <option value="" disabled selected>Selecciona una opción</option>
-              <?php require_once('utils.php');
-                require_once('util.php');
-                  displayOptions(getLugares(),'nombre');
-                ?>
             </select>
             <label for="Lugar">¿Dónde es el incidente?</label>
           </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-            <select name="Tipo">
+            <select name="Tipo" id="listaTipos">
               <option value="" disabled selected>Selecciona una opción</option>
-              <?php require_once('utils.php');
-                require_once('util.php');
-                  displayOptions(getTipos(),'denominacion');
-                ?>
+              
             </select>
             <label for="Tipo">¿Cuál es el incidente?</label>
         </div>

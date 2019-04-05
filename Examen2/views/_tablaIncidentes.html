@@ -1,4 +1,4 @@
-    <h2>Incidentes 1</h2>
+    <h2 id="numeroIncidentes"></h2>
       <table class="highlight">
         <thead>
           <tr>
@@ -7,12 +7,8 @@
               <th>Tipo</th>
           </tr>
         </thead>
-
-        <tbody>
-          <?php require_once('utils.php');
-                require_once('util.php');
-                displayIncidents(getIncidents());
-                ?>
+        <tbody id="tablaIncidentes">
         </tbody>
+        
       </table>
       
