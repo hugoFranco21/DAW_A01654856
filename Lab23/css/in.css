@@ -1,0 +1,32 @@
+.preg, .referencias, .imagen, .ejercicio{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.referencias{
+  /*background-color: #f1f1f1;*/
+  margin-bottom: -16px;
+}
+
+#code{
+	color: #ffffff;
+}
+
+a{
+	cursor: pointer;
+}
+
+img{
+  width: 50%;
+  height: auto;
+  margin-left: 5%;
+}
+
+#map {
+    height: 60%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
