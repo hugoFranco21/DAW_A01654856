@@ -11,6 +11,7 @@
     if($con->connect_error){
       die("Connection failed: " . $con->connection_error);
     }
+    $con->set_charset("utf8");
     return $con;
   }
 
