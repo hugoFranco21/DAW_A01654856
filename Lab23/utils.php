@@ -8,7 +8,7 @@
     include('partials/cerrar.html');
   }
 
-  function _footer(){
+  function _footer($libr,$pers){
     include('partials/footer.html');
   }
 
@@ -38,6 +38,10 @@
 
   function _map(){
     include('partials/map.html');
+  }
+
+  function _registrar(){
+    include('partials/registrar.html');
   }
 
   function test_input($data) {

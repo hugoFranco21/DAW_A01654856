@@ -4,9 +4,9 @@
   _header();
 
 
-  _registrar();
+  _map();
   _preguntas();
   _referencias();
-  _footer('&callback=initAutocomplete&libraries=places','js/autocomplete.js');
+  _footer('&callback=initMap&libraries=places','js/mapa.js');
 
 ?>

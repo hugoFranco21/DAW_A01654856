@@ -10,6 +10,7 @@
     if($con->connect_error){
       die("Connection failed: " . $con->connection_error);
     }
+    $con->set_charset("utf8");
     return $con;
   }
 
@@ -17,7 +18,7 @@
     $mysql->close();
   }
 
-  function getFruits(){
+  function getEntregas(){
     $conn = connectDB();
     $query="SELECT name, units, quantity, price, country FROM Fruit";
     if($stmt = $conn->prepare($query)){
@@ -29,86 +30,12 @@
     return $result;
   }
 
-  function getFruitName(){
+  function insertEnt($producto, $cliente, $numero, $calle, $ciudad, $estado, $cp, $repartidor){
     $conn = connectDB();
-    $query="SELECT name FROM Fruit";
-    if($stmt = $conn->prepare($query)){
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    $ar=array();
-    $i=0;
-    while($row = mysqli_fetch_assoc($result)){
-      $ar[$i]=$row['name'];
-      $i++;
-    }
-    //var_dump($ar);
-    //die();
-    return $ar;
-    //return $result;
-  }
-
-  function getFruitsByName($fruit_name){
-    $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE NAME LIKE %?%";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$fruit_name);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-  }
-
-  function getCheapestFruits($cheap_price){
-    $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE price <= ?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('d',$fruit_name);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-  }
-
-  function getFruitsByCountry($country){
-    $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE country LIKE %?%";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$country);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-  }
-
-  function getFruitsByUnits($units){
-    $conn = connectDB();
-    $sql = "SELECT name, units, quantity, price, country FROM Fruit WHERE units >= ?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('i',$units);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-  }
-
-  function insertFruit($name, $units, $quantity, $price, $country){
-    $conn = connectDB();
-    //$sql = "INSERT INTO Fruit (Name, Units, Quantity, Price, Country) VALUES('".$name."', '".$units."','".$quantity."','".$price."','".$country."')";
-    $sql = "INSERT INTO Fruit (Name, Units, Quantity, Price, Country) VALUES(?,?,?,?,?)";
+    $sql = "INSERT INTO entregas (producto, nombre_cliente, numero_calle, calle, estado, postal, nombre_repartidor) VALUES(?,?,?,?,?,?,?)";
 
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('siids',$name,$units,$quantity,$price,$country);
+      $stmt->bind_param('ssssssis',$producto, $cliente, $numero, $calle, $ciudad, $estado, $cp, $repartidor);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();

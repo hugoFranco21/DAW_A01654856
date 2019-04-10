@@ -1,9 +1,13 @@
-CREATE TABLE Fruit(
-  id_fruit int NOT NULL AUTO_INCREMENT,
-  name varchar(40),
-  units numeric(4,0),
-  quantity numeric(4,0),
-  price numeric(5,2),
-  country varchar(40),
-  CONSTRAINT pk_idfruit PRIMARY KEY (id_fruit)
+CREATE TABLE entregas(
+  id int NOT NULL AUTO_INCREMENT,
+  producto varchar(40),
+  nombre_cliente varchar(50),
+  numero_calle varchar(30),
+  calle varchar(40),
+  ciudad varchar(40),
+  estado varchar(40),
+  postal numeric(5,0),
+  nombre_repartidor varchar(50),
+  fecha_hora timestamp,
+  CONSTRAINT pk_id PRIMARY KEY (id)
 )
