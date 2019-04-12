@@ -1,0 +1,29 @@
+<div class="bg-secondary text-white" id="scripts">
+<br/>
+<h3 class="text-white"><?= $nom ?></h3>
+<br/>
+<form id="insertarRegistro" class="text-white">
+  <div class="form-group">
+    <label for="nombre">Ingrese el nombre de la fruta</label>
+    <input type="text" class="form-control" name="nameFruit" placeholder="Nombre de la fruta" id="nFruit"><!--span class="text-danger"><?php echo $nombreErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="unitsFruit">Ingrese las unidades</label>
+    <input type="number" step="0.01" class="form-control" name="unitsFruit" placeholder="0" id="uFruit"><!-- span class="text-danger"><?php echo $apellidoErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="quantityFruit">Ingrese la cantidad</label>
+    <input type="number" step="0.01" class="form-control" name="quantityFruit" placeholder="0" id="qFruit"><!-- span class="text-danger"><?php echo $edadErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="priceFruit">Ingrese el precio</label>
+    <input type="number" step="0.01" class="form-control" name="priceFruit" placeholder="0.0" id="pFruit"><!-- span class="text-danger"><?php echo $direccionErr;?></span -->
+  </div>
+  <div class="form-group">
+    <label for="countryFruit">Ingrese el nombre del país</label>
+    <input type="text" class="form-control" name="countryFruit" placeholder="País" id="cFruit"><!-- span class="text-danger"><?php echo $CPErr;?></span -->
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br/>
+</div>
