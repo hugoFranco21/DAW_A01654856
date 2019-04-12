@@ -32,7 +32,7 @@
 
   function insertEnt($producto, $cliente, $numero, $calle, $ciudad, $estado, $cp, $repartidor){
     $conn = connectDB();
-    $sql = "INSERT INTO entregas (producto, nombre_cliente, numero_calle, calle, estado, postal, nombre_repartidor) VALUES(?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO entregas (producto, nombre_cliente, numero_calle, calle, ciudad, estado, postal, nombre_repartidor) VALUES(?,?,?,?,?,?,?,?)";
 
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('ssssssis',$producto, $cliente, $numero, $calle, $ciudad, $estado, $cp, $repartidor);

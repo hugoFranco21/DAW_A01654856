@@ -9,14 +9,8 @@
   $estado = htmlentities($_POST['estado']);
   $cp = htmlentities($_POST['cp']);
   $repartidor = htmlentities($_POST['nombre_repartidor']);
-  if(strlen($producto) > 0 && strlen($nombre) > 0 && strlen($numero) > 0 && strlen($calle) > 0 && strlen($ciudad) > 0 && strlen($estado) > 0 && strlen($cp) == 5 && strlen($repartidor) > 0){
-    if(insertEnt($producto, $nombre, $numero, $calle, $ciudad, $estado, $cp, $repartidor)){
-      echo '<script>alert("La inserción se realizó exitosamente")</script>';
-    } else{
-      echo '<script>alert("La inserción no se pudo realizar")</script>';
-    }
-  } else {
-      echo '<script>alert("La inserción no se pudo realizar")</script>';
+  if(strlen($producto) > 0 && strlen($nombre) > 0 && strlen($numero) > 0 && strlen($calle) > 0 && strlen($ciudad) > 0 && strlen($estado) > 0 && strlen($cp) > 0 && strlen($repartidor) > 0){
+    insertEnt($producto, $nombre, $numero, $calle, $ciudad, $estado, $cp, $repartidor);
   }
 
 ?>

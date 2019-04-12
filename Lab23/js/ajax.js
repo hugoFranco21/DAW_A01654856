@@ -1,22 +1,3 @@
-//$(document).ready(imprimir());
-
-function imprimir(){
-  $.post('tablaController.php')
-  .done(function(data){
-    $('#tablaFruits').html(data);
-  });
-}
-
-$(document).ready(function(){
-  $("#busquedaFruta").keyup(function(){
-      $.get("frutasAjax.php",{ pattern: $('#busquedaFruta').val()})
-      .done(function(data){
-        $('#Registros').html(data);
-        $('#Registros').show();
-      });
-  });
-});
-
 $(document).ready(function(){
   $("#insertarRegistro").submit(function (ev){
     ev.preventDefault();
@@ -28,7 +9,6 @@ $(document).ready(function(){
     var uestado= $('#administrative_area_level_1').val();
     var ucp= $('#postal_code').val();
     var urepartidor= $('#nombre_repartidor').val();
-     //console.log(nombre);
      $.post('insertController.php', { producto : uproducto, nombre_cliente : ucliente, numero : unumero, calle : ucalle, ciudad : uciudad, estado : uestado, cp : ucp, nombre_repartidor : urepartidor } )
      .done(function(data){
        console.log("Correcto");
@@ -46,9 +26,10 @@ $(document).ready(function(){
        $('#administrative_area_level_1').prop("disabled", true);
        $('#postal_code').prop("disabled", true);
        $('#autocomplete').val("");
+       alert('Inserción realizada');
       })
       .fail(function(){
-        //imprimir();
+        alert('Inserción no realizad, revise los datos anotados');
         console.log('Error');
       });
     });
