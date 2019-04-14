@@ -1,0 +1,75 @@
+<div class="bg-secondary text-white imagen">
+<br/>
+<h3 class="text-white">Registre un pedido</h3>
+<br/>
+<form id="insertarRegistro" class="text-white">
+  <div class="form-group">
+    <label for="nombre">Ingrese el producto comprado</label>
+    <input type="text" class="form-control" maxlength="40" name="producto" placeholder="Producto" id="producto">
+  </div>
+  <div class="form-group">
+    <label for="unitsFruit">Ingrese el nombre del cliente</label>
+    <input type="text" class="form-control" maxlength="50" name="nombre_cliente" placeholder="Juan Pérez" id="nombre_cliente">
+  </div>
+  <div class="form-group" id="locationField">
+    <label for="busqueda">Busque la dirección del cliente</label>
+    <input id="autocomplete" class="form-control" placeholder="Ingresa la dirección" onFocus="geolocate()" type="text" name="busqueda"/>
+  </div>
+  <div class="form-group">
+    <label for="numero">Número</label>
+    <input type="text" class="form-control" maxlength="30" name="numero" disabled="true" placeholder="Ej: Mz 1. Lt 47" id="street_number">
+  </div>
+  <div class="form-group">
+    <label for="calle">Calle</label>
+    <input type="text" maxlength="40" class="form-control" name="calle" disabled="true" placeholder="Ej: Epigmenio González" id="route">
+  </div>
+  <div class="form-group">
+    <label for="ciudad">Ciudad</label>
+    <input type="text" maxlength="40" class="form-control" name="ciudad" disabled="true" placeholder="Ej. Monterrey" id="locality">
+  </div>
+  <div class="form-group">
+    <label for="estado">Estado</label>
+    <input type="text" maxlength="5" class="form-control" name="estado" disabled="true" placeholder="Ej. Nuevo León" id="administrative_area_level_1">
+  </div>
+  <div class="form-group">
+    <label for="cp">Código Postal</label>
+    <input type="number" maxlength="5" class="form-control" name="cp" disabled="true" placeholder="90210" id="postal_code">
+  </div>
+  <div class="form-group">
+    <label for="nombre_repartidor">Ingrese el nombre del repartidor</label>
+    <input type="text" class="form-control" name="nombre_repartidor" placeholder="Ej. Luis García" id="nombre_repartidor">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br/>
+</div>
+<!--div id="locationField">
+
+    </div>
+
+    <!-- Note: The address components in this sample are typical. You might need to adjust them for
+               the locations relevant to your app. For more information, see
+         https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+    -->
+
+    <!--table id="address">
+      <tr>
+        <td class="label">Street address</td>
+        <td class="slimField"><input class="field" id="street_number" disabled="true"/></td>
+        <td class="wideField" colspan="2"><input class="field" id="route" disabled="true"/></td>
+      </tr>
+      <tr>
+        <td class="label">City</td>
+        <td class="wideField" colspan="3"><input class="field" id="locality" disabled="true"/></td>
+      </tr>
+      <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="field" id="administrative_area_level_1" disabled="true"/></td>
+        <td class="label">Zip code</td>
+        <td class="wideField"><input class="field" id="postal_code" disabled="true"/></td>
+      </tr>
+      <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"--><!--input type="hidden" class="field" id="country" disabled="true"/--><!--/td>
+      </tr>
+    </table-->
