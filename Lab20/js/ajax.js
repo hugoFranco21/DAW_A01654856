@@ -47,14 +47,14 @@ $(document).ready(function(){
      .done(function(data){
        console.log(nombre);
        imprimir();
+	   $('#nFruit').val("");
+        $('#uFruit').val("");
+        $('#qFruit').val("");
+        $('#pFruit').val("");
+        $('#cFruit').val("");
       })
       .fail(function(){
         imprimir();
-        $('#nFruit').val(" ");
-        $('#uFruit').val(" ");
-        $('#qFruit').val(" ");
-        $('#pFruit').val(" ");
-        $('#cFruit').val(" ");
         console.log('Error');
       })
     });
